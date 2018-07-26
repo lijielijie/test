@@ -60,11 +60,11 @@
         <url-pattern>/</url-pattern>  
     </servlet-mapping>  
     <welcome-file-list>  
-        <welcome-file>/login.jsp</welcome-file>  
+        <welcome-file>/login2.jsp</welcome-file>  
     </welcome-file-list>  
   	<session-config>  
          <session-timeout>720</session-timeout>  
-    </session-config>
+    </session-config> 
         <!-- 这样的配置表示如果jsp页面或者servlet发生java.lang.Exception类型（当然包含子类）的异常就会转到err.jsp页面处理。 -->  
     <error-page>   
         <exception-type>java.lang.Exception</exception-type>   
