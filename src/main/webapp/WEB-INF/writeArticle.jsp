@@ -283,9 +283,6 @@ img {
 		var textareaNum=0;//textarea数量
 		var imageSum=0;//image数量
 		function tagsAdd(type){
-			 
-			 
-			 
 			 $('#noneText').hide();//隐藏空内容提示
 			 if (type==0) {
 				//var textareaHtml="<textarea class='textarea  article-node' id=textarea"+textareaNum+" cols='20' ></textarea>";//新文本框
