@@ -37,12 +37,12 @@
     		color: #495057;font-size: 1rem;
     		border: 1px solid #b800fe;
     		border-radius: .25rem;
-    		border-left: 6px solid #b800fe;
+    		border-left: 5px solid red;
     		transition: border-color .10s ease-in-out,box-shadow .10s ease-in-out;
     		margin-bottom: 1rem;
 		}
 		.form-button{
-			flex-direction: row;flex: 1;
+			flex: 1;
 			height:2.5rem;
 			color: #fff;line-height:2rem;font-size: 1rem;
     		background-color: #28a745;
@@ -88,7 +88,7 @@ $('#btn-login').click(function() {
      $("#username").fadeOut("fast");
      $("#username").fadeIn("fast");
      return;
-   }
+	}
    if(password==""){
      $("#password").fadeOut("fast");
      $("#password").fadeIn("fast");
