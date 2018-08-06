@@ -138,8 +138,9 @@
 <script type="text/javascript">
 $('.lable').click(function() {
 	$("#content-iframe1").attr("src",'../page/lable/'+$(this).attr('lableName'));
-	$("#content-title").css("margin-top",'-18rem');
-	$("#content").css("display",'flex');
+	$(".lable").animate({margin:'0rem'},2000);
+	$("#content-title").animate({marginTop:'-18rem'},2000);
+	$("#content").css('display','flex');
 })
 </script>
 </html>
