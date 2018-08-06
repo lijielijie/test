@@ -18,6 +18,12 @@ public class pageController {
 	public String gotoPage(HttpServletRequest req,@PathVariable("jsp") String jsp) {
         return jsp;
 	}
-	
+	/**
+	 * 跳转各网页（新）
+	 */
+	@RequestMapping("/lable/{jsp}") 
+	public String gotoLable(HttpServletRequest req,@PathVariable("jsp") String jsp) {
+        return jsp;
+	}
 
 }
