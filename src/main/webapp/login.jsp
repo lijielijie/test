@@ -116,14 +116,14 @@ $('#btn-login').click(function() {
 });
 //input获得焦点事件
 $(".form-input").focus(function(){
-	$(this).css("border-color","gold");
+	$(this).css("border-color","#b800fe");
 });
 //input失去焦点事件
 $(".form-input").blur(function(){
 	if($(this).val()){
 		$(this).css("border-color","#28a745");
 	}else{
-		$(this).css("border-color","#b800fe");
+		$(this).css("border-color","red");
 	};
 });
 //input清空事件

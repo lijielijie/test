@@ -23,10 +23,10 @@
     		flex-direction: row;
 		}
 		#content{
-			display:none;
+			display:flex;
 			background-color:#fff;
     		flex-direction: row;
-    		width: 100%;height: 100%;
+    		width: 100%;height: 0%;
 		}
 		.lable{
 			height:350px;width:200px;
@@ -87,7 +87,6 @@
     		margin: 0px 0 0 -100px;
 		}
 		
-		
 		#lable4:hover{
 			box-shadow: 0 0 10px #c28896,0 0 20px #fff ,0 0 30px #fff,0 0 40px #c28896;
 		}
@@ -96,6 +95,32 @@
     		clip-path: inset(0 0 30px 0 round .5rem .5rem 0 0);
     		margin: -1px 0 0 -100px;
 		}
+		
+		
+.small_01 {
+	animation:small_01 2s infinite;
+	animation-iteration-count:1;
+	animation-fill-mode:forwards ;
+}
+.small_02{
+	animation:small_02 2s infinite;
+	animation-iteration-count:1;
+	animation-fill-mode:forwards ;
+}
+.small_03{
+	animation:small_03 2s infinite;
+	animation-iteration-count:1;
+	animation-fill-mode:forwards ;
+}		
+@keyframes small_01{
+	from {margin:1rem;}to {margin:0;}
+}	
+@keyframes small_02{
+	from {margin-top:0rem;margin-right:0%;}to {margin-top:-17.5rem;margin-right:-40%;}
+}	
+@keyframes small_03{
+	from {opacity:0;height: 0%;}to {opacity:1;height: 100%;}
+}
 	</style>
 </head>
 <body>
@@ -138,9 +163,16 @@
 <script type="text/javascript">
 $('.lable').click(function() {
 	$("#content-iframe1").attr("src",'../page/lable/'+$(this).attr('lableName'));
-	$(".lable").animate({margin:'0rem'},2000);
-	$("#content-title").animate({marginTop:'-18rem'},2000);
-	$("#content").css('display','flex');
+	$(".lable").attr('class','lable small_01');//添加新类，使新类的延时特效生效
+	$("#content-title").attr('class','small_02');
+	$("#content").attr('class','small_03');
 })
+$('#content').click(function() {
+	$("#content-iframe1").attr("src",'../page/lable/'+$(this).attr('lableName'));
+	$("#content-title").attr('class','');
+	$(".lable").attr('class','lable');
+	$("#content").attr('class','');
+})
+
 </script>
 </html>
