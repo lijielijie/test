@@ -57,9 +57,9 @@
 			<img alt="哈哈哈" style="width:3rem;height: 3rem;vertical-align: middle;" src="svg/logo.svg">
 			<span class="content-title" style="vertical-align: middle;">&nbsp;记录点滴</span>
 		</div>
-		<form id ="form-login" action="" method="post" >
-			<input type="text" id="username" name="un" class="form-input" placeholder="请输入用户名" /> 
-			<input type="password" id="password" name="pw" class="form-input" placeholder="请输入密码" />
+		<form id ="form-login" action="user/index" method="post" >
+			<input type="text" id="username" name="username" class="form-input" placeholder="请输入用户名" /> 
+			<input type="password" id="password" name="password" class="form-input" placeholder="请输入密码" />
 			<div style="display: flex;width: 100%">
 				<button type="button" id="btn-login" class="form-button">登 录</button>
 				<button type="reset"  class="form-button">重 置</button>
@@ -94,15 +94,15 @@ $('#btn-login').click(function() {
      $("#password").fadeIn("fast");
     return;
    }
-   $.post('user/login', {"name" : username,"pass" : password}, 
+   $.post('user/checkLogin', {"name" : username,"pass" : password}, 
 	function(data) {
 		if (data==1) {
 			 $('#info1').text("登录成功 即将跳转至首页");
-			 setTimeout("javascript:location.href='welcome.jsp'", 2000);
+			 $("#form-login").submit();
 		}
 		if (data==-1) {
 			 $('#info1').text("您已登录 即将跳转至首页");
-			 setTimeout("javascript:location.href='welcome.jsp'", 2000);
+			 $("#form-login").submit();
 		}
 		if (data==2) {
 			 $('#info1').text("没有此用户 请先注册");
@@ -112,9 +112,7 @@ $('#btn-login').click(function() {
 			 $('#info1').text("密码错误");
 			 $('#password').val("");
 		}
-		$("#info1").fadeIn("fast");
 	});
-	return;
 });
 //input获得焦点事件
 $(".form-input").focus(function(){

@@ -31,22 +31,32 @@ public class UserController {
     	
     }
     /**
+     * 校验
+     */
+    @RequestMapping("/checkLogin")
+    @ResponseBody
+    public int checkLogin(HttpServletRequest req,@RequestParam("name")String name,@RequestParam("pass")String pass){ 
+    	HttpSession session=req.getSession();
+        return checkLogin(session,name,pass);
+    }
+    /**
      * 登录
      */
-    @RequestMapping("/login")
-    @ResponseBody
-    public int login(HttpServletRequest req,@RequestParam("name")String name,@RequestParam("pass")String pass){ 
-    	int info=BaseSet.NO_LOGIN;
+    @RequestMapping("/index")
+    public String index(HttpServletRequest req,@RequestParam(value = "username", required = false)String name,@RequestParam(value ="password", required = false)String pass){ 
     	HttpSession session=req.getSession();
     	User user=(User)session.getAttribute(BaseSet.USER);
-    	//会话有登录信息，返回成功
-    	if (null!=user&&(boolean)session.getAttribute(BaseSet.LOGIN_FLAG)) {
-    		logger.info("alreadyLogin:"+user.getName()+"已经登陆  sessionId:"+session.getId());
-    		return BaseSet.ALREADY_LOGIN;
-		}else {//没有就执行登录
-			info=checkLogin(session,name,pass);
+    	
+    	if (null!=user&&(boolean)session.getAttribute(BaseSet.LOGIN_FLAG)) {//会话有登录信息，返回成功
+    		logger.info(user.getName()+"已经登陆  sessionId:"+session.getId());
+    		return "welcome";
 		}
-        return info;
+    	if (1==checkLogin(req.getSession(),name,pass)) {
+    		logger.info(name+"登录成功");
+    		return "welcome";
+		}else {
+			return "err";
+		}
     }
     /**
      * 退出登录
@@ -94,7 +104,6 @@ public class UserController {
         	logger.error("login:密码错误");
         	return BaseSet.ERR_PASSWORD;
 		}
-        logger.info("login:"+name+"登录成功");
         session.setAttribute(BaseSet.USER, user);
         session.setAttribute(BaseSet.LOGIN_FLAG, true);
         return BaseSet.SUCCESS_LOGIN;
