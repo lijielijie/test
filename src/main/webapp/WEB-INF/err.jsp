@@ -14,23 +14,34 @@
 <head>
 <base href="<%=basePath%>" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="icon" href="../img/title.png" type="image/x-icon"/>
 <title>err</title>
-<link rel="stylesheet" type="text/css" href="../css/index.css">
-<script type="text/javascript" src="../js/jquery-1.8.2.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<script type="text/javascript" src="./js/jquery-1.8.2.js"></script>
 <style type="text/css">
 body{
-	overflow: auto;
+	display: flex;
+   	align-items: center;
+    justify-content: center;
+    flex-direction: column;
+	background-image: url("./img/bg/bg5.jpg");
+	background-size:100%;
+	background-repeat:no-repeat; 
 }
-
+#err-panel{
+	margin-top: 12rem;
+	display: flex;
+    flex-direction: column;
+	color:white;
+}
+h1{
+	color:gold;
+}
 </style>
 </head>
 <body>
-	<div class="err-panel" style="padding-left: 2vmin">
-		<br/>
-		<h1>没有检测到您的登录信息</h1>
-		<p style="color:red">点此登录</p>
-		<img alt="" src="../img/err.jpg" style="top:2%; left: 33%; width: 250px; height: 95px; position: absolute;clip:rect(0px 170px 200px 0px);" />
+	<div id="err-panel" >
+		<h1 style="font-size:2rem;color:gold;margin-bottom:.5rem">没有检测到您的登录信息</h1>
+		<a style="font-size:1.5rem;color:#95fff5"  href="./">点此登录</a>
 	</div>
 </body>
 </html>

@@ -66,17 +66,6 @@
 			</div>
 			<b id="info1" style="color:rgb(2, 143, 212);"></b>
 		</form>
-		<form id ="form-register" style="display: none;" method="post">
-			<input type="text" id="reg-username" name="un" class="form-input" placeholder="请输入姓名" /> 
-			<input type="password" id="reg-password" name="pw" class="form-input" placeholder="请输入密码" />
-			<input type="password" id="reg-password1" name="pw1" class="form-input" placeholder="请再次输入密码" />
-			<div style="display: flex;width: 100%">
-				<button type="button" id="btn-register" class="form-button">注册</button>
-				<button type="reset"  class="form-button">重 置</button>
-				<button type="button" id="to-login" class="form-button">登 录</button>
-			</div>
-			<b id="info2" style="color:rgb(2, 143, 212);"></b>
-		</form>
 	</div>
 </body>
 <script type="text/javascript">

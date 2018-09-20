@@ -34,7 +34,8 @@
     
  	<servlet-mapping>  
         <servlet-name>default</servlet-name>  
-        <url-pattern>*.jpg</url-pattern>  
+        <url-pattern>*.jpg</url-pattern>
+        <url-pattern>*.html</url-pattern>  
         <url-pattern>*.gif</url-pattern>  
         <url-pattern>*.js</url-pattern> 
         <url-pattern>*.css</url-pattern>
@@ -77,6 +78,6 @@
     </error-page>  
 	<error-page>
 		<error-code>404</error-code>
-		<location>/err.jsp</location>
+		<location>/WEB-INF/game.html</location>
 	</error-page>  
 </web-app>  
